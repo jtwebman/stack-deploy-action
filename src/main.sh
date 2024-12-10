@@ -59,8 +59,9 @@ if [ -n "${INPUT_ENV_FILE}" ];then
     # echo TRAEFIK_HOST: "${TRAEFIK_HOST}"
     # export ENV_FILE="${INPUT_ENV_FILE}"
 fi
-registry_auth
+
 if [ -n "${INPUT_REGISTRY_AUTH}" ];then
+    echo -e "\u001b[36mRunning register auth command."
     eval "${INPUT_REGISTRY_AUTH}"
 fi
 
