@@ -59,6 +59,10 @@ if [ -n "${INPUT_ENV_FILE}" ];then
     # echo TRAEFIK_HOST: "${TRAEFIK_HOST}"
     # export ENV_FILE="${INPUT_ENV_FILE}"
 fi
+registry_auth
+if [ -n "${INPUT_REGISTRY_AUTH}" ];then
+    eval "${INPUT_REGISTRY_AUTH}"
+fi
 
 DEPLOY_CMD="docker stack deploy -c \"${INPUT_FILE}\" \"${INPUT_NAME}\""
 if [ "${INPUT_WITH_REGISTRY_AUTH}" == "true" ]; then
