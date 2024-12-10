@@ -67,4 +67,5 @@ if [ "${INPUT_WITH_REGISTRY_AUTH}" == "true" ]; then
 fi
 
 echo -e "\u001b[36mDeploying Stack: \u001b[37;1m${INPUT_NAME}"
+echo -e "Running: ${DEPLOY_CMD}"
 eval "${DEPLOY_CMD}"
